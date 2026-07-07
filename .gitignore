@@ -1,0 +1,10 @@
+.DS_Store
+.venv/
+**/.venv/
+**/.env
+**/__pycache__/
+**/*.pyc
+**/*.db
+**/app/uploads/*
+!**/app/uploads/.gitkeep
+.pytest_cache/

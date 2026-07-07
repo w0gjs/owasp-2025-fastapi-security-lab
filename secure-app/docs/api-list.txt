@@ -1,0 +1,39 @@
+[Auth]
+GET  /register
+POST /register - password policy and scrypt hashing
+GET  /login
+POST /login - parameterized lookup, lockout, audit events
+GET  /logout
+
+[Posts]
+GET  /posts - parameterized search
+GET  /posts/new
+POST /posts/new - escaped rendering
+GET  /posts/mine
+GET  /posts/{post_id}
+GET  /posts/private/{post_id} - owner only
+POST /posts/{post_id}/delete - owner or admin only
+POST /posts/{post_id}/comments - escaped rendering
+
+[Points]
+GET  /points
+POST /points/transfer - positive amount and balance checks
+
+[Backup]
+GET  /posts/backup
+GET  /posts/export - HMAC-signed JSON
+POST /posts/import - signature check and owner override
+
+[Upload]
+GET  /upload
+POST /upload - extension, MIME, and 5MB limit
+GET  /download/{upload_id} - login required
+
+[Admin]
+GET /admin - admin only
+GET /admin/security-events - admin only
+
+[Disabled]
+GET /docs - 404
+GET /redoc - 404
+GET /debug/* - generic 404 response

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}게시글 백업 · 모아{% endblock %}
+{% block content %}
+<div class="page-heading">
+    <span class="eyebrow">DATA PORTABILITY</span>
+    <h1>게시글 백업</h1>
+    <p>내 게시글을 JSON 파일로 보관하거나 이전 백업을 가져올 수 있습니다.</p>
+</div>
+<div class="two-column">
+    <section class="panel upload-card">
+        <span class="upload-icon">↓</span>
+        <h2>내보내기</h2>
+        <p class="muted">현재 계정의 게시글을 하나의 파일로 저장합니다.</p>
+        <a class="button button-full" href="/posts/export">백업 다운로드</a>
+    </section>
+    <section class="panel form-panel">
+        <h2>가져오기</h2>
+        <p class="muted">이전에 내려받은 JSON 백업 파일을 선택하세요.</p>
+        <form method="post" action="/posts/import" enctype="multipart/form-data">
+            <label class="file-picker" for="backup_file"><strong>JSON 파일 선택</strong><span>posts-backup.json</span></label>
+            <input class="visually-hidden" id="backup_file" type="file" name="backup_file" accept="application/json,.json" required>
+            <button class="button button-full" type="submit">백업 가져오기</button>
+        </form>
+    </section>
+</div>
+{% endblock %}

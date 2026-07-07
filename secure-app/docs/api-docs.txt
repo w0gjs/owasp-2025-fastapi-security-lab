@@ -1,0 +1,5 @@
+Secure API documentation is intentionally not exposed at runtime.
+
+The route inventory is maintained in docs/api-list.txt.
+Security controls are documented in docs/remediation-matrix.md and the repository root
+docs/attack-vs-defense.md.
